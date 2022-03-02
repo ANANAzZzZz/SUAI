@@ -98,7 +98,7 @@ double row(double x, double eps, int &n) {
     while (abs(CurN) > eps && n < INT_MAX) {
         result += CurN;
         n++;
-        CurN *= x * x/ (2 * n + 1.) / (2 * n);
+        CurN *= -x * x/ (2 * n + 1.) / (2 * n);
     }
     return result;
 }
