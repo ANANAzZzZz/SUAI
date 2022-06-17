@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1139</width>
+    <height>679</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_output">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>70</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Вывод</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>110</y>
+      <width>931</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QTableWidget" name="tableWidget_2">
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>50</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>40</number>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tableWidget">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>50</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>40</number>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>490</y>
+      <width>461</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="sortButton">
+       <property name="text">
+        <string>Отсортировать матрицу</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="clearButton">
+       <property name="text">
+        <string>Очистить</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_input">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>70</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ввод</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>490</y>
+      <width>461</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton_Create">
+       <property name="text">
+        <string>Создать</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spinBox">
+       <property name="minimum">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <number>15</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="n_text">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>2 * n</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="AutomaticInputButton">
+       <property name="text">
+        <string>Автоматический вввод </string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1139</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>О программе</string>
+    </property>
+    <addaction name="info"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="info">
+   <property name="text">
+    <string>Информация</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
