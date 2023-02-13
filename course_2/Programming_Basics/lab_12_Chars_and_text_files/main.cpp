@@ -7,11 +7,10 @@
 
 Решение с использованием функций библиотеки <stdio.h>*/
 
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
+#include<cstdio>
+#include<cstring>
+#include<cstdlib>
 #include <iostream>
-#include<locale.h>
 #include <algorithm>
 #include "windows.h"
 
@@ -48,7 +47,7 @@ int main() {
 
 //выводим его содержимое
   if (!checkFile(fname_i, PR_R)) {
-    printf(" Ошибка открытия файла %s", fname_i, " на чтение\n");
+    printf(" Ошибка открытия файла %s", fname_i);
     printf(" Нажмите <Enter>\n");
     getchar();
     return 0;            //если исходный файл не создан
@@ -61,7 +60,7 @@ int main() {
 
 //выводим содержимое результата
   if (!checkFile(fname_r, PR_R)) {
-    printf(" Ошибка открытия файла %s", fname_r, " на чтение\n");
+    printf(" Ошибка открытия файла %s", fname_r);
     printf(" Нажмите <Enter>\n");
     getchar();
     return 0;            //если результирующий файл не создан
@@ -95,7 +94,7 @@ void makeFile(char* fname_i) {
 /*проверяем возможность открытия файла для записи
 поскольку полное имя файла могло быть задано с ошибкой*/
   if (!checkFile(fname_i, PR_W)) {
-    printf(" Ошибка открытия файла %s", fname_i, " на запись\n");
+    printf(" Ошибка открытия файла %s", fname_i);
     printf(" Нажмите <Enter>\n");
     getchar();
     exit(0);
@@ -160,7 +159,9 @@ void removeDuplicates(char st_in[RAZ], char st_out[RAZ]) {
   st_out[0] = '\0';
 
   // удаляем символ переноса строки
-  if (p = strrchr(st_in, '\n')) {
+  p = strrchr(st_in, '\n');
+
+  if (p) {
     *p = '\0';
   }
 
@@ -172,7 +173,7 @@ void removeDuplicates(char st_in[RAZ], char st_out[RAZ]) {
   words = new char* [size + 1];
 
   // генерируем массив слов со строками
-  for (p; p != NULL; p = strtok(NULL, " \t")) {
+  for (; p != NULL; p = strtok(NULL, " \t")) {
     words[size] = new char[size];
     words[size] = strdup(p);
 
@@ -196,8 +197,8 @@ void removeDuplicates(char st_in[RAZ], char st_out[RAZ]) {
     }
 
   // очищаем память, задействованную на массив
-  for (int i = 0; i != size; ++i)
-    delete [] words[i];
+  for (int g = 0; g != size; ++g)
+    delete [] words[g];
   delete [] words;
 
 }
