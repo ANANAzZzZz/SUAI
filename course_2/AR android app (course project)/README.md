@@ -24,7 +24,7 @@
 ### Экраны приложения:
 
 <p align="center">
-  <img src="SUAI/course_2/AR android app/images/MainMenu.png" />
+  <img src="/course_2/AR%20android%20app%20(course%20project)/images/MainMenu.png" />
 </p>
 <p align="center">
   <img src="/images/Detail_IITP.png" />
