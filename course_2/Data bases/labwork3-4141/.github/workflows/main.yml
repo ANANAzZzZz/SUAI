@@ -1,0 +1,17 @@
+name: Labwork 3 check
+on: 
+  push:
+    paths:
+      - 'labwork3.sql'
+  pull_request:
+    paths:
+      - 'labwork3.sql'
+  workflow_dispatch:
+jobs:
+  build:
+    name: SQLite verification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Database consistency check
+        run: sqlite3 test.db < labwork3.sql && sqlite3 test.db < labwork3.sql

@@ -1,0 +1,21 @@
+name: Labwork 4 check
+on: 
+  push:
+    paths:
+      - 'labwork3.sql'
+      - 'labwork4.sql'
+  pull_request:
+    paths:
+      - 'labwork3.sql'
+      - 'labwork4.sql'
+  workflow_dispatch:
+jobs:
+  build:
+    name: SQLite verification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Database consistency check
+        run: (test -f labwork3.sql || touch labwork3.sql) && sqlite3 test.db < labwork3.sql && sqlite3 test.db < labwork3.sql
+      - name: Views test
+        run: sqlite3 test.db < labwork4.sql

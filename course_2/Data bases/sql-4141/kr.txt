@@ -1,0 +1,93 @@
+4141 Сыворотнев В.С.
+
+1)
+SELECT DISTINCT a.Район AS Район
+FROM R1 a, R1 b
+WHERE a.Район == b.Район 
+	AND a.N_филиала <> b.N_филиала;
+
+2)
+SELECT DISTINCT ФИО_Клиента
+FROM R2
+WHERE ФИО_Клиента NOT IN 
+	(SELECT DISTINCT a.ФИО_Клиента as ФИО
+	FROM R2 a, R2 b
+	WHERE a.N_филиала == b.N_филиала
+		AND a.N_счета <> b.N_счета
+		AND a.ФИО_Клиента == b.ФИО_Клиента);
+
+3)
+SELECT ФИО_Клиента
+FROM R1, R2
+WHERE R1.N_филиала == R2.N_филиала
+GROUP BY ФИО_Клиента
+HAVING COUNT(DISTINCT Район) > 1;
+
+4)
+SELECT DISTINCT R1.N_филиала
+FROM R1 INNER JOIN R2 
+     USING(N_филиала)
+WHERE R1.Район NOT IN 
+	(SELECT R1.Район
+	FROM R1 INNER JOIN R2
+           USING(N_филиала)
+	GROUP BY R1.Район, R2.ФИО_Клиента
+	HAVING count(R1.N_филиала) > 1) 
+		AND R2.ФИО_Клиента NOT IN
+			(SELECT R2.ФИО_Клиента
+			FROM R1 INNER JOIN R2
+                       USING(N_филиала)
+			GROUP BY R1.Район, R2.ФИО_Клиента
+			HAVING count(R1.N_филиала) > 1);
+
+5)
+SELECT DISTINCT ФИО_Клиента
+FROM R2 o
+WHERE Остаток = (SELECT MAX(Остаток) FROM R2 i WHERE i.N_филиала = o.N_филиала)
+
+6)
+SELECT ФИО_студента
+FROM R1
+GROUP BY ФИО_студента
+HAVING COUNT(DISTINCT Представляющая_кафедра) > 1;
+
+7)
+SELECT DISTINCT Представляющая_кафедра
+FROM R3 INNER JOIN R1
+     USING(ФИО_студента)
+WHERE R3.Курс = 3
+
+8)
+SELECT DISTINCT Представляющая_кафедра
+FROM R2 INNER JOIN R3
+     USING(Номер_группы)
+        INNER JOIN R4 a 
+     ON R2.Выпускающая_кафедра = a.Кафедра
+        INNER JOIN R1
+    USING(ФИО_студента)
+INNER JOIN R4 b
+     ON R1.Представляющая_кафедра = b.Кафедра
+WHERE a.Факультет <> b.Факультет;
+
+9)
+SELECT Название_работы
+FROM R2 INNER JOIN R3
+     USING(Номер_группы)
+        INNER JOIN R4
+     ON R2.Выпускающая_кафедра = Кафедра
+        INNER JOIN R1
+     USING(ФИО_студента)
+WHERE Курс >= 3
+GROUP BY Название_работы
+HAVING COUNT(DISTINCT ФИО_студента) > 1 AND COUNT(DISTINCT Факультет) > 1;
+
+10)
+SELECT DISTINCT Представляющая_кафедра
+FROM R1
+WHERE Представляющая_кафедра NOT IN 
+	(SELECT DISTINCT Представляющая_кафедра
+	FROM R1 INNER JOIN R3
+           USING(ФИО_студента)
+	        INNER JOIN R2
+           USING(Номер_группы)
+	WHERE R1.Представляющая_кафедра <> R2.Выпускающая_кафедра);

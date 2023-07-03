@@ -1,0 +1,4 @@
+script: sqlite3 test.db < labwork3.sql &&
+  sqlite3 test.db < labwork3.sql
+notifications:
+  email: false
