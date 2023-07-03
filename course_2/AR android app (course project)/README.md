@@ -27,17 +27,17 @@
   <img src="/course_2/AR%20android%20app%20(course%20project)/images/MainMenu.png" />
 </p>
 <p align="center">
-  <img src="/images/Detail_IITP.png" />
+  <img src="/course_2/AR%20android%20app%20(course%20project)/images/Detail_IITP.png" />
 </p>  
 <p align="center">
-  <img src="/images/Detail_IST.png" />
+  <img src="/course_2/AR%20android%20app%20(course%20project)/images/Detail_IST.png" />
 </p>  
 <p align="center">  
-  <img src="/images/Detail_KTPI.png" />
+  <img src="course_2/AR%20android%20app%20(course%20project)/images/Detail_KTPI.png" />
 </p>  
 <p align="center">  
-  <img src="/images/Detail_PI.png" />
+  <img src="course_2/AR%20android%20app%20(course%20project)/images/Detail_PI.png" />
 </p>  
 <p align="center">  
-  <img src="/images/Detail_VSS.png" />
+  <img src="/course_2/AR%20android%20app%20(course%20project)/images/Detail_VSS.png" />
 </p>
